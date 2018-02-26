@@ -53,7 +53,7 @@ class LogStash::Outputs::Slack < LogStash::Outputs::Base
     end
 
     if not @icon_emoji.nil?
-      payload_json['icon_emoji'] = @icon_emoji
+      payload_json['icon_emoji'] = event.sprinf(@icon_emoji)
     end
 
     if not @icon_url.nil?
